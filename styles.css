@@ -8,11 +8,19 @@ body {
   background-color: #121215;
   color: #eaeaea;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+
+  display: grid;
+  grid-template-areas: "profile timeline";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100vh;
 }
 
 nav {
   padding: 64px;
+  grid-area: timeline;
+
+  overflow-y: scroll;
 }
 
 .memory {
@@ -31,7 +39,7 @@ nav {
 
 .memory h1 {
   font-size: 32px;
-    color: #eaeaea;
+  color: #eaeaea;
 }
 
 .memory img {
@@ -45,4 +53,42 @@ nav {
   font-size: 18px;
   color: #bebebf;
   line-height: 28px;
+}
+
+aside {
+  grid-area: profile;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  border-right: 1px solid;
+  border-image: linear-gradient(#727275, #2c2c31) 1;
+
+  background-image: url("./assets/background.svg");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+aside img:nth-child(2) {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+
+  border: 4px solid transparent;
+  background: linear-gradient(#d39e33, #ed5636, #633bbc) padding-box,
+    linear-gradient(260deg, #d39e33, #ed5636, #633bbc) border-box;
+}
+
+aside p {
+  font-size: 32px;
+  text-align: center;
+}
+
+aside span {
+  font-size: 12px;
+  color: #9e9ea0;
 }
